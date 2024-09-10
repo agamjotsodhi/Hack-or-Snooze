@@ -2,15 +2,21 @@
 
 nav {
   display: flex;
-  background: #ff6600;
+  background-color: #ff6600;
   align-items: center;
-  padding: 22px 20px;
+  padding: 25px 20px;
   border-radius: 3px 3px 0 0;
 }
 
 .navbar-brand {
-  font-size: 21px;
   font-weight: bold;
+}
+
+.main-nav-links {
+  margin: 0 10px;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-link {
@@ -21,32 +27,4 @@ nav {
 .nav-right {
   margin-left: auto;
   text-align: right;
-}
-
-.nav-right {
-  margin-left: auto;
-  text-align: right;
-}
-
-#nav-user-profile {
-  font-weight: bold;
-  color: rgb(0, 0, 0);
-}
-
-.main-nav-user-links {
-  font-size: 18px;
-  justify-content: center;
-  align-items: center;
-  margin: 0 18px;
-  margin-top: 6px;
-}
-
-.main-nav-user-links a {
-  justify-content: space-evenly;
-  margin-right: 10px;
-}
-
-.main-nav-user-links a:hover {
-  color: rgb(248, 248, 248);
-  text-decoration: underline;
 }
