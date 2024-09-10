@@ -4,12 +4,18 @@
   margin: 20px 5px;
 }
 
-.stories-list>li {
+.stories-list > li {
   color: gray;
   font-size: 0.8rem;
-  padding-bottom: 8px;
-  border-bottom: 2px solid rgb(195, 195, 195);
   margin: 10px 0;
+  border-bottom: 1px solid #e5e5e5;
+  padding-bottom: 10px;
+}
+
+#favorited-stories,
+#my-stories {
+  list-style: none;
+  padding-left: 20px;
 }
 
 #stories-loading-msg {
@@ -18,17 +24,22 @@
   margin: 20px 30px;
 }
 
-#my-stories-list,
-#favorite-stories-list {
-  padding-left: 15px;
-  list-style: none;
-}
-
 
 /* Individual stories */
 
+.star,
+.trash-can {
+  font-size: 0.75rem;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.trash-can:hover {
+  color: crimson;
+}
+
 .story-link {
-  color: rgb(16, 15, 15);
+  color: black;
   font-size: 0.85rem;
   font-weight: normal;
   margin: 18px 0;
@@ -36,13 +47,12 @@
 
 .story-link:hover {
   text-decoration: none;
-
 }
 
 .story-author {
   margin-left: 2em;
   font-size: 0.85rem;
-  color: rgb(3, 118, 3);
+  color: green;
   padding: 6px 0;
 }
 
@@ -50,26 +60,5 @@
   display: block;
   margin-left: 2em;
   font-size: 0.85rem;
-  color: rgb(252, 169, 17);
-}
-
-.deleted-stories {
-  border: none;
-  background: none;
-}
-
-.deleted-stories:hover {
-  color: rgb(234, 0, 0);
-}
-
-.star:hover {
-  color: rgb(254, 122, 73);
-}
-
-.star,
-.deleted-stories {
-  display: inline;
-  font-size: 0.75rem;
-  margin: 0 5px;
-  cursor: pointer;
+  color: orange;
 }
