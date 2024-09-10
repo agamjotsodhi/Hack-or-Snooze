@@ -1,36 +1,30 @@
 "use strict";
 
-// Linked Html elements
 // So we don't have to keep re-finding things on page, find DOM elements once:
 
-// html body content
 const $body = $("body");
 
-//3 main story lists
-const $listOfStories = $(".stories-list");
+const $storiesLoadingMsg = $("#stories-loading-msg");
+const $allStoriesList = $("#all-stories-list");
+const $favoritedStories = $("#favorited-stories");
+const $ownStories = $("#my-stories");
+const $storiesContainer = $("#stories-container")
+
+
+// selector that finds all three story lists
+const $storiesLists = $(".stories-list");
+
 const $loginForm = $("#login-form");
 const $signupForm = $("#signup-form");
 
-//Main story related elements
-const $storiesLoadingMsg = $("#stories-loading-msg");
-const $storiesContainer = $("#stories-container");
-const $allStoriesList = $("#all-stories-list");
-const $myStoriesList = $("#my-stories-list");
-const $favoriteStoriesList = $("#favorite-stories-list");
+const $submitForm = $("#submit-form");
 
-//add new story submission form
-const $addStoryForm = $("#add-story");
-
-//Main nav bar page links
-const $navSubmitStory = $("#nav-submit-story"); //submit btn
-const $navFavorites = $("#nav-my-favorites"); // my favorites btn
-const $navMyStories = $("#nav-my-stories"); // my stories btn
-
-//Nav right bar links 
-const $navLogin = $("#nav-login"); //login/signup btn
+const $navSubmitStory = $("#nav-submit-story");
+const $navLogin = $("#nav-login");
 const $navUserProfile = $("#nav-user-profile");
-const $navLogOut = $("#nav-logout"); //logout btn
+const $navLogOut = $("#nav-logout");
 
+const $userProfile = $("#user-profile");
 
 /** To make it easier for individual components to show just themselves, this
  * is a useful function that hides pretty much everything on the page. After
@@ -39,10 +33,11 @@ const $navLogOut = $("#nav-logout"); //logout btn
 
 function hidePageComponents() {
   const components = [
-    $listOfStories,
+    $storiesLists,
+    $submitForm,
     $loginForm,
     $signupForm,
-    $addStoryForm,
+    $userProfile
   ];
   components.forEach(c => c.hide());
 }
