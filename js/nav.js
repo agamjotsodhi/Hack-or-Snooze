@@ -6,70 +6,74 @@
 
 /** Show main list of all stories when click site name */
 
-//Displays all stories when clicked 
-
-function navAllStories(event) {
-  console.debug("navAllStories", event);
+function navAllStories(evt) {
+  console.debug("navAllStories", evt);
   hidePageComponents();
   putStoriesOnPage();
 }
 
 $body.on("click", "#nav-all", navAllStories);
 
+/** Show story submit form on clicking story "submit" */
+
+function navSubmitStoryClick(evt) {
+  console.debug("navSubmitStoryClick", evt);
+  hidePageComponents();
+  $allStoriesList.show();
+  $submitForm.show();
+}
+
+$navSubmitStory.on("click", navSubmitStoryClick);
+
+/** Show favorite stories on click on "favorites" */
+
+function navFavoritesClick(evt) {
+  console.debug("navFavoritesClick", evt);
+  hidePageComponents();
+  putFavoritesListOnPage();
+}
+
+$body.on("click", "#nav-favorites", navFavoritesClick);
+
+/** Show My Stories on clicking "my stories" */
+
+function navMyStories(evt) {
+  console.debug("navMyStories", evt);
+  hidePageComponents();
+  putUserStoriesOnPage();
+  $ownStories.show();
+}
+
+$body.on("click", "#nav-my-stories", navMyStories);
+
 /** Show login/signup on click on "login" */
 
-function navLoginClick(event) {
-  console.debug("navLoginClick", event);
+function navLoginClick(evt) {
+  console.debug("navLoginClick", evt);
   hidePageComponents();
-  $storiesContainer.hide(); //hides stories from login page
-  $loginForm.show()
+  $loginForm.show();
   $signupForm.show();
+  $storiesContainer.hide()
 }
 
 $navLogin.on("click", navLoginClick);
 
-// Show the add story form after clicking on nav bar: submit btn
+/** Hide everything but profile on click on "profile" */
 
-function navAddStoryClick(event) {
-  console.debug("navAddStoryClick", event);
+function navProfileClick(evt) {
+  console.debug("navProfileClick", evt);
   hidePageComponents();
-  $addStoryForm.show();
-  $allStoriesList.show();
-
+  $userProfile.show();
 }
 
-$navSubmitStory.on("click", navAddStoryClick);
-
-//Show all user favorited stories after clicking on nav bar: my favorites btn
-
-function navFavoritesClick(event) {
-  console.debug("navFavoritesClick", event);
-
-  hidePageComponents();
-  displayFavoriteList();
-}
-
-$body.on("click", "#nav-my-favorites", navFavoritesClick);
+$navUserProfile.on("click", navProfileClick);
 
 /** When a user first logins in, update the navbar to reflect that. */
 
 function updateNavOnLogin() {
   console.debug("updateNavOnLogin");
-  $(".main-nav-user-links").css('display', 'flex');
+  $(".main-nav-links").css('display', 'flex');;
   $navLogin.hide();
   $navLogOut.show();
   $navUserProfile.text(`${currentUser.username}`).show();
 }
-
-//Show all of user inputed stories after clicking on nav bar: my stories btn
-
-function navMyStoriesClick(event) {
-  console.debug("navMyStories", event);
-
-  $myStoriesList.show();
-  hidePageComponents();
-  displayMyStoriesList();
-}
-
-$body.on("click", "#nav-my-stories", navMyStoriesClick);
-
